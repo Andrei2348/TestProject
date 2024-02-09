@@ -1,0 +1,70 @@
+@import "vars";
+@import "fonts";
+@import "global";
+
+
+.message__form{
+    max-width: 600px;
+    margin: 20px auto 70px;
+    
+    &-wrapper{
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 70px 30px;
+        
+    }
+    &-label{
+        color: rgb(26, 26, 26);
+        line-height: 1.3;
+        display: block;
+        margin-bottom: 10px;
+    }
+    &-input{
+        margin-bottom: 20px;
+        color: rgb(26, 26, 26);
+        padding: 10px 20px;
+        border: 1px solid #635555;
+        border-radius: 3px;
+        font-size: 18px;
+        transition: all ease .4s;
+    }
+    &-input::placeholder{
+        color: #63555550;
+    }
+    &-area:focus,
+    &-input:focus {
+        outline: none;
+        border: 1px solid #303891;
+    }
+    &-area{
+        line-height: 1.3;
+        color: rgb(26, 26, 26);
+        padding: 20px;
+        padding-left: 25px;
+        min-height: 200px;
+        resize: none;
+        overflow: hidden;
+        border: 1px solid #635555;
+        border-radius: 3px;
+        background-color: transparent;
+        margin-bottom: 20px;
+    }
+    &-button{
+        display: inline-block;
+        padding: 10px 23px;
+        font-size: 18px;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        background-color: #303891;
+        line-height: 1.3;
+        cursor: pointer;
+        transition: all ease .4s;
+        width: 160px;
+        text-align: center;
+    }
+    &-button:hover{
+        background-color: #1d2469;
+    }
+}

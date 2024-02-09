@@ -18,6 +18,10 @@ function startProp(){
         };
         console.log(formData)
         
-        validate(formData);
+        if(validate(formData)){
+            console.log('Делаем запрос на сервер')
+        }else{
+            console.log('Не все хорошо')
+        }
     });
 };

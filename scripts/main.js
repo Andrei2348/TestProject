@@ -7,6 +7,7 @@ let formObject = {
         };
         
 import {validate} from './modules/validate.js'
+import {submitForm} from './modules/sendform.js'
 
 
 window.addEventListener('DOMContentLoaded', startProp);
@@ -43,6 +44,9 @@ function startProp(){
             }
             console.log(formObject)
             console.log('Делаем запрос на сервер')
+            submitForm(formObject)
         }
     });
 };
+
+

@@ -1,5 +1,5 @@
 const formInputs = document.querySelectorAll('.message__form-inner .form__input');
-let formData = {
+let formObject = {
             name: '',
             email: '',
             phone: '',
@@ -34,6 +34,14 @@ function startProp(){
         if(validate(formData)){
             console.log('Не все хорошо')
         }else{
+            // Формирует объект для отправки в ajax
+            let i = 0;
+            for (let key in formObject){
+                console.log(key);
+                formObject[key] = formData[i]
+                i++;
+            }
+            console.log(formObject)
             console.log('Делаем запрос на сервер')
         }
     });

@@ -1,21 +1,24 @@
+const requestURL = 'http://127.0.0.1:5500/';
 
 // Отправка данных на сервер
-export function submitForm(event) {
-    event.preventDefault();
-    const form = document.getElementById('demo-form');
-    const formData = new FormData(form);
-    
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', '/submit-form');
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        if (xhr.status === 200) {
-          console.log('Form submitted successfully');
-        } else {
-          console.error('Error in submitting form');
-        }
-      }
+export function sendForm(data){
+    const xmlhttp = new XMLHttpRequest(); 
+    xmlhttp.open("POST", "/json-handler");
+    xmlhttp.setRequestHeader("Content-Type", "application/json");
+    xmlhttp.send(JSON.stringify(data));
+    xmlhttp.onload = () => {
+        if (xmlhttp.status != 200) {
+            const result = {
+                            "status": "error",
+                            "fields": {
+                                "inputName": "Ошибка отправки данных"
+                            }
+                        }
+            
+            return result;
+        }else{
+            const response = xmlhttp.response;
+            return response;
+        };
     };
-    xhr.send(new URLSearchParams(formData).toString());
-  }
+}

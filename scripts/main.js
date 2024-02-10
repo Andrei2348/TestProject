@@ -1,13 +1,16 @@
 const formInputs = document.querySelectorAll('.message__form-inner .form__input');
+const formMessages = document.querySelectorAll('.message__form-inner .message__form-errors');
 let formObject = {
             name: '',
             email: '',
             phone: '',
             message: ''
         };
-        
+
+
 import {validate} from './modules/validate.js'
-import {submitForm} from './modules/sendform.js'
+import {sendForm} from './modules/sendform.js'
+
 
 
 window.addEventListener('DOMContentLoaded', startProp);
@@ -22,31 +25,46 @@ function getValuesOfForm(){
     return data;
 }
 
+
 function startProp(){
     document.querySelector('.message__form-button').addEventListener('click', function(event){
         event.preventDefault();
+        resetAlerts();
         let formData = getValuesOfForm();
-        
-
-
-        
-        console.log(validate(formData))
-        
-        if(validate(formData)){
-            console.log('Не все хорошо')
+        let errors = validate(formData);
+        console.log(errors)
+        if(errors.some(num => {return num != ''})){
+            // При возникновении ошибок стилим инпуты с ошибками и выводим сообщение
+            errors.forEach((error, index) => {
+                if(error != ''){
+                    formInputs[index].classList.add('alert')
+                    formMessages[index].classList.add('visible');
+                    formMessages[index].innerHTML = error;
+                }
+            })
         }else{
-            // Формирует объект для отправки в ajax
+            // Формирует объект для отправки на сервер
             let i = 0;
             for (let key in formObject){
-                console.log(key);
                 formObject[key] = formData[i]
                 i++;
-            }
+            };
             console.log(formObject)
-            console.log('Делаем запрос на сервер')
-            submitForm(formObject)
+            let result = sendForm(formObject);
+            console.log(result)
         }
-    });
+    })
 };
 
 
+// Сброс стилей неправильного ввода данных
+function resetAlerts(){
+    document.querySelectorAll('.message__form-inner').forEach((element, index) => {
+        if(formMessages[index].classList.contains('visible')){
+            formMessages[index].classList.remove('visible');
+        };
+        if(formInputs[index].classList.contains('alert')){
+            formInputs[index].classList.remove('alert');
+        };
+    });
+};

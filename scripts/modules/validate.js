@@ -13,9 +13,14 @@ let messagesArray = ['Имя пользователя введено непра�
 export function validate(data){
     console.log(data)
     for (let key of Object.keys(data)) {
+
         console.log(data[key])
+        console.log(data.findIndex(data[key]))
+        // let index = data.findIndex(p => p.attr1 == "john");
     }
     let errors = [];
+    
+
     
     errors.push(validName(data.name))
     errors.push(validMail(data.email))

@@ -1,8 +1,11 @@
-// let inputName = document.getElementById('input__text');
-// let inputEmail = document.getElementById('input__email');
-// let inputPhone = document.getElementById('input__phone');
-// let inputMessage = document.getElementById('input__message');
-const formInputs = document.querySelectorAll('.message__form-inner .form-input');
+const formInputs = document.querySelectorAll('.message__form-inner .form__input');
+let formData = {
+            name: '',
+            email: '',
+            phone: '',
+            message: ''
+        };
+        
 import {validate} from './modules/validate.js'
 
 
@@ -25,18 +28,13 @@ function startProp(){
         
 
 
-        // let formData = {
-        //     name: inputName.value,
-        //     email: inputEmail.value,
-        //     phone: inputPhone.value,
-        //     message: inputMessage.value
-        // };
-        // console.log(formData)
+        
+        console.log(validate(formData))
         
         if(validate(formData)){
-            console.log('Делаем запрос на сервер')
-        }else{
             console.log('Не все хорошо')
+        }else{
+            console.log('Делаем запрос на сервер')
         }
     });
 };

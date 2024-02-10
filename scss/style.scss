@@ -83,7 +83,7 @@
     &-errors{
         position: absolute;
         bottom: -28px;
-        left: 0;
+        right: 0;
         display: block;
         color: #fff;
         font-size: 16px;
@@ -110,4 +110,7 @@
         z-index: 9;
         transform: rotate(45deg);
     }
+}
+.form__input.alert{
+    border-color: #c40e1d;
 }

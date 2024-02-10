@@ -1,5 +1,8 @@
 const formInputs = document.querySelectorAll('.message__form-inner .form__input');
 const formMessages = document.querySelectorAll('.message__form-inner .message__form-errors');
+const closeButton = document.querySelector('.message__form-close--button');
+const openModalButton = document.querySelector('.modal__open-button');
+
 let formObject = {
             name: '',
             email: '',
@@ -23,10 +26,21 @@ function getValuesOfForm(){
         data.push(formInputs[i].value)
     }
     return data;
-}
+};
 
 
 function startProp(){
+
+
+    // Закрытие модального окна
+    closeButton.addEventListener('click', function(event){
+        event.preventDefault();
+        if(document.querySelector('.message__modal').classList.contains('visible')){
+            document.querySelector('.message__modal').classList.remove('visible');
+        };
+    })
+
+    // Работа с формой
     document.querySelector('.message__form-button').addEventListener('click', function(event){
         event.preventDefault();
         resetAlerts();
@@ -43,7 +57,6 @@ function startProp(){
                 }
             })
         }else{
-            // Формирует объект для отправки на сервер
             let i = 0;
             for (let key in formObject){
                 formObject[key] = formData[i]

@@ -14,26 +14,26 @@
                 <form class="message__form-wrapper" method="POST">
                     <div class="message__form-inner">
                         <label for="text" class="message__form-label">Введите имя</label>
-                        <input type="text" id="input__text" class="message__form-input" placeholder="Введите имя" required>
+                        <input type="text" id="input__text" class="message__form-input form-input" placeholder="Введите имя" required>
                         <p class="message__form-errors" id="error__name"></p>
                     </div>
 
                     <div class="message__form-inner">
                         <label for="input__email" class="message__form-label">Введите email</label>
-                        <input type="email" id="input__email" class="message__form-input" placeholder="Введите email" required>
+                        <input type="email" id="input__email" class="message__form-input form-input" placeholder="Введите email" required>
                         <p class="message__form-errors" id="error__email"></p>
                     </div>
                     
                     <div class="message__form-inner">
                         <label for="input__phone" class="message__form-label">Введите номер телефона</label>
-                        <input type="phone" id="input__phone" class="message__form-input" placeholder="Введите номер телефона" required>
+                        <input type="phone" id="input__phone" class="message__form-input form-input" placeholder="Введите номер телефона" required>
                         <p class="message__form-errors" id="error__phone">Номер телефона введен неправильно!</p>
                     </div>
     
                     <div class="message__form-inner">
                         <label for="input__message" class="message__form-label">Введите ваше сообщение</label>
-                        <textarea name="input__message" class="message__form-area" id="input__message" cols="30" rows="7" required></textarea>
-
+                        <textarea name="input__message" class="message__form-area form-input" id="input__message" cols="30" rows="7" required></textarea>
+                        <p class="message__form-errors" id="error__message"></p>
                     </div>
                 
                     <input type="submit" class="message__form-button" value="Отправить">

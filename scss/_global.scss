@@ -367,6 +367,9 @@ body{
   font-size: 18px;
   min-width: 320px;
   overflow-x: hidden;
+  left: 0;
+  right: 0;
+  background-color: #9da3e6;
 }
 
 a{
@@ -399,7 +402,7 @@ img{
 
 html,
 body{
-  height: 100vh;
+  height: 200vh;
 }
 
 .main{

@@ -3,13 +3,13 @@ const formMessages = document.querySelectorAll('.message__form-inner .message__f
 const closeButton = document.querySelector('.message__form-close--button');
 const openModalButton = document.querySelector('.modal__open-button');
 
+
 let formObject = {
             name: '',
             email: '',
             phone: '',
             message: ''
         };
-
 
 import {validate} from './modules/validate.js'
 import {sendForm} from './modules/sendform.js'
@@ -18,6 +18,10 @@ import {sendForm} from './modules/sendform.js'
 
 window.addEventListener('DOMContentLoaded', startProp);
 
+// Функция очистки введенных данных
+function cleanInputs(){
+    formInputs.forEach(element => element.value = '');
+};
 
 // Функция получения данных из формы
 function getValuesOfForm(){
@@ -30,7 +34,16 @@ function getValuesOfForm(){
 
 
 function startProp(){
-
+    // Открытие модального окна
+    openModalButton.addEventListener('click', function(event){
+        event.preventDefault();
+        cleanInputs();
+        document.querySelector('.message__modal').classList.add('visible');
+        document.body.style.position = 'fixed';
+        document.body.style.overflowY = 'hidden';
+        document.body.style.paddingRight = '15px';
+        document.body.style.top = `-${window.scrollY}px`;
+    });
 
     // Закрытие модального окна
     closeButton.addEventListener('click', function(event){
@@ -38,6 +51,13 @@ function startProp(){
         if(document.querySelector('.message__modal').classList.contains('visible')){
             document.querySelector('.message__modal').classList.remove('visible');
         };
+        const scrollY = document.body.style.top;
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.paddingRight = '0';
+        document.body.style.overflowY = 'visible';
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        resetAlerts();
     })
 
     // Работа с формой

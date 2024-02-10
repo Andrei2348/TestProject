@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/scss/style.css">
-    <title>Страница переписки пользователя</title>
+    <title>Страница оформления заказа</title>
 </head>
 <body>
     <main class="main">
@@ -14,26 +14,26 @@
                 <h1 class="message__form-title">Форма отправки сообщений</h1>
                 <form class="message__form-wrapper" method="POST">
                     <div class="message__form-inner">
-                        <label for="text" class="message__form-label">Введите имя</label>
-                        <input type="text" id="input__text" class="message__form-input form__input" placeholder="Введите имя" required>
+                        <label for="input__text" class="message__form-label">Введите имя</label>
+                        <input type="text" id="input__text" class="message__form-input form__input" placeholder="Введите имя">
                         <p class="message__form-errors" id="error__name"></p>
                     </div>
     
                     <div class="message__form-inner">
                         <label for="input__email" class="message__form-label">Введите email</label>
-                        <input type="email" id="input__email" class="message__form-input form__input" placeholder="Введите email" required>
+                        <input type="email" id="input__email" class="message__form-input form__input" placeholder="Введите email">
                         <p class="message__form-errors" id="error__email"></p>
                     </div>
                     
                     <div class="message__form-inner">
                         <label for="input__phone" class="message__form-label">Введите номер телефона</label>
-                        <input type="phone" id="input__phone" class="message__form-input form__input" placeholder="Введите номер телефона" required>
+                        <input type="text" id="input__phone" class="message__form-input form__input" placeholder="Введите номер телефона">
                         <p class="message__form-errors" id="error__phone"></p>
                     </div>
     
                     <div class="message__form-inner">
                         <label for="input__message" class="message__form-label">Введите ваше сообщение</label>
-                        <textarea name="input__message" class="message__form-area form__input" id="input__message" cols="30" rows="7" required></textarea>
+                        <textarea name="input__message" class="message__form-area form__input" id="input__message" cols="30" rows="7"></textarea>
                         <p class="message__form-errors" id="error__message"></p>
                     </div>
                 
@@ -45,6 +45,7 @@
             <a href="#" class="modal__open-button">Оформить заявку</a>
         </div>
     </main>
+    <script src="https://unpkg.com/imask"></script>
     <script type="module" src="/scripts/main.js"></script>
     <script type="module" src="/scripts/modules/validate.js"></script>
     <script type="module" src="/scripts/modules/sendform.js"></script>

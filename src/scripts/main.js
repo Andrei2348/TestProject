@@ -6,7 +6,6 @@ const messageArea = document.querySelector('.message__action-text');
 
 
 
-// localhost:9090
 let formObject = {
             name: '',
             email: '',
@@ -16,8 +15,6 @@ let formObject = {
 
 import {validate} from './modules/validate.js'
 import {sendForm} from './modules/sendform.js'
-
-import '../scss/style.scss'
 
 
 // Функция очистки введенных данных
@@ -84,10 +81,9 @@ let startProp = () => {
             let result = sendForm(formObject);
             if(result.status == 'success'){
                 cleanInputs();
-                messageArea.innerHTML = 'Данные успешно отправлены';
-            }else{
-                messageArea.innerHTML = 'Ошибка отправки данных!';
             }
+            // Вывод сообщения от сервера о статусе запроса
+            messageArea.innerHTML = result.message;
         }
     })
 };

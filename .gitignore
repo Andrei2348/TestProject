@@ -117,9 +117,6 @@ $RECYCLE.BIN/
 *.css
 
 
-### grunt ###
-# Grunt usually compiles files inside this directory
-dist/
 
 # Grunt usually preprocesses files such as coffeescript, compass... inside the .tmp directory
 .tmp/
@@ -141,6 +138,27 @@ dist/
 # sftp configuration file
 sftp-config.json
 
+### Webpack ###
+/node_modules
+/test/js
+/test/browsertest/js
+/test/fixtures/temp-*
+/test/temp
+/test/ChangesAndRemovals
+/test/**/dev-defaults.webpack.lock
+/benchmark/js
+/benchmark/fixtures
+/examples/**/dist
+/assembly/**/*.wat
+/assembly/**/*.wasm
+/coverage
+/.nyc_output
+/.jest-cache
+.DS_Store
+*.log
+.idea
+.eslintcache
+package-lock.json
 
 ### Code ###
 # Visual Studio Code - https://code.visualstudio.com/

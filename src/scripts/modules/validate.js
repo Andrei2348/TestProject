@@ -13,6 +13,7 @@ let reArray = [/^[a-zA-Zа-яА-Я0-9]+$/,
 
 const mask = IMask(phoneMask, {mask : '+{375} (00) 000-00-00'})
             
+import IMask from 'imask'
 
 // Функция проверки валидности форм
 export let validate = (data) => {

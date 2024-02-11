@@ -17,6 +17,7 @@ let formObject = {
 import {validate} from './modules/validate.js'
 import {sendForm} from './modules/sendform.js'
 
+import '../scss/style.scss'
 
 
 // Функция очистки введенных данных
@@ -65,7 +66,6 @@ let startProp = () => {
         resetAlerts();
         let formData = getValuesOfForm();
         let errors = validate(formData);
-        console.log(errors)
         if(errors.some(num => {return num != ''})){
             // При возникновении ошибок стилим инпуты с ошибками и выводим сообщение
             errors.forEach((error, index) => {
@@ -81,7 +81,6 @@ let startProp = () => {
                 formObject[key] = formData[i]
                 i++;
             };
-            console.log(formObject)
             let result = sendForm(formObject);
             if(result.status == 'success'){
                 cleanInputs();

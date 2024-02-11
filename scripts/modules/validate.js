@@ -23,7 +23,7 @@ export function validate(data){
         }else{
             // Получаем номер телефона из маски
             errors.push(checkValid(i, mask.unmaskedValue))
-        }
+        };
     };
     return errors;
 }

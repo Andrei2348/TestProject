@@ -26,6 +26,18 @@
         opacity: 1;
     }
 }
+.message__action{
+    &-wrapper{
+        display: flex;
+    }
+    &-text{
+        margin-left: 16px;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.3;
+        color: rgb(26, 26, 26);
+    }
+}
 .message__form{
     width: 660px;
     position: absolute;
@@ -177,3 +189,4 @@
 .modal__open-button:hover{
     background-color: #1d2469;
 }
+

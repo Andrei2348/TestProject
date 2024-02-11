@@ -15,13 +15,14 @@ import {validate} from './modules/validate.js'
 import {sendForm} from './modules/sendform.js'
 
 
-
 window.addEventListener('DOMContentLoaded', startProp);
+
 
 // Функция очистки введенных данных
 function cleanInputs(){
     formInputs.forEach(element => element.value = '');
 };
+
 
 // Функция получения данных из формы
 function getValuesOfForm(){
@@ -58,7 +59,7 @@ function startProp(){
         document.body.style.overflowY = 'visible';
         window.scrollTo(0, parseInt(scrollY || '0') * -1);
         resetAlerts();
-    })
+    });
 
     // Работа с формой
     document.querySelector('.message__form-button').addEventListener('click', function(event){
@@ -93,11 +94,7 @@ function startProp(){
 // Сброс стилей неправильного ввода данных
 function resetAlerts(){
     document.querySelectorAll('.message__form-inner').forEach((element, index) => {
-        if(formMessages[index].classList.contains('visible')){
-            formMessages[index].classList.remove('visible');
-        };
-        if(formInputs[index].classList.contains('alert')){
-            formInputs[index].classList.remove('alert');
-        };
+        formMessages[index].classList.remove('visible');
+        formInputs[index].classList.remove('alert');
     });
 };

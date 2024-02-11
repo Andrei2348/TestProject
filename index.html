@@ -9,6 +9,7 @@
 <body>
     <main class="main">
         <div class="message__modal">
+            
             <div class="message__form">
                 <a href="#" class="message__form-close--button"></a>
                 <h1 class="message__form-title">Форма отправки сообщений</h1>
@@ -37,7 +38,10 @@
                         <p class="message__form-errors" id="error__message"></p>
                     </div>
                 
-                    <input type="submit" class="message__form-button" value="Отправить">
+                    <div class="message__action-wrapper">
+                        <input type="submit" class="message__form-button" value="Отправить">
+                        <p class="message__action-text"></p>
+                    </div>
                 </form>
             </div>
         </div>

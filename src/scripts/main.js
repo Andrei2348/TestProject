@@ -15,7 +15,9 @@ let formObject = {
 
 import {validate} from './modules/validate.js'
 import {sendForm} from './modules/sendform.js'
-
+import '../scss/_fonts.scss'
+import '../scss/_global.scss'
+import '../scss/style.scss'
 
 // Функция очистки введенных данных
 let cleanInputs = () => {

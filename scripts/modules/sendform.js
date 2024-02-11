@@ -1,7 +1,7 @@
 const requestURL = 'http://127.0.0.1:5500/';
 
 // Отправка данных на сервер
-export function sendForm(data){
+export let sendForm = (data) => {
     const xmlhttp = new XMLHttpRequest(); 
     xmlhttp.open("POST", "/json-handler");
     xmlhttp.setRequestHeader("Content-Type", "application/json");

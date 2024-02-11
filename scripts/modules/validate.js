@@ -15,7 +15,7 @@ const mask = IMask(phoneMask, {mask : '+{375} (00) 000-00-00'})
             
 
 // Функция проверки валидности форм
-export function validate(data){
+export let validate = (data) => {
     let errors = [];
     for (let i = 0; i < 4; i++){
         if(i != 2){
@@ -30,7 +30,7 @@ export function validate(data){
 
 
 // Функция проверки каждой из форм
-function checkValid(index, data){
+let checkValid = (index, data) => {
     let output = '';
     let valid = false;
     if(data != ''){

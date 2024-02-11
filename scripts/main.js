@@ -41,9 +41,7 @@ let startProp = () => {
         event.preventDefault();
         cleanInputs();
         document.querySelector('.message__modal').classList.add('visible');
-        document.body.style.position = 'fixed';
-        document.body.style.overflowY = 'hidden';
-        document.body.style.paddingRight = '15px';
+        document.body.classList.add('noscroll');
         document.body.style.top = `-${window.scrollY}px`;
     });
 
@@ -54,10 +52,8 @@ let startProp = () => {
             document.querySelector('.message__modal').classList.remove('visible');
         };
         const scrollY = document.body.style.top;
-        document.body.style.position = '';
+        document.body.classList.remove('noscroll');
         document.body.style.top = '';
-        document.body.style.paddingRight = '0';
-        document.body.style.overflowY = 'visible';
         window.scrollTo(0, parseInt(scrollY || '0') * -1);
         resetAlerts();
         messageArea.innerHTML = '';

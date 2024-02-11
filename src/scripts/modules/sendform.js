@@ -1,4 +1,4 @@
-const requestURL = 'http://127.0.0.1:5500/';
+const requestURL = 'http://localhost:9090/api/registration';
 
 // Отправка данных на сервер
 export let sendForm = (data) => {
